@@ -1,8 +1,8 @@
 <?php
 
-$filePath = '../files/';
+$filePath = 'files';
 $filePattern = '*.*';
-$urlPath = 'http://www.lancasterphotographicsociety.org.uk';
+$urlPath = 'http://www.lancasterphotographicsociety.org.uk/tools/competition';
 
 $files = glob($filePath . DIRECTORY_SEPARATOR . $filePattern);
 
@@ -22,5 +22,5 @@ $competitionFiles['title'] = 'LPS Competition Manager Data';
 $competitionFiles['version'] = '0.1';
 $competitionFiles['files'] = $zipFiles;
 
-$json = json_encode($competitionFiles);
+$json = json_encode($competitionFiles, JSON_UNESCAPED_SLASHES);
 echo $json;
